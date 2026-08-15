@@ -1,69 +1,75 @@
-# The Halo Project: Decentralized, Autonomous Recipe Registry for Dawn Engine
+# The Arc Project: Sovereign Recipe Architecture for tig-pkg Engine
 
-The Halo Project is the centralized, recipe-driven directive registry that serves as the single source of truth for the Dawn execution engine. Architected to eliminate the systematic vulnerabilities of traditional software distribution networks, Halo operates as a highly optimized repository of structural deployment configurations. It decouples the upstream asset tracking mechanism from the compiled system layer, enabling the Dawn core engine to locate, verify, and ingest native binary distributions with deterministic, sub-millisecond precision.
+The Arc Project is the enterprise-grade, decentralized registry infrastructure designed to serve as the unified directive baseline for the `tig-pkg` native package management ecosystem. Formulated to rectify the systemic vulnerabilities and dependency bloat inherent to legacy distribution protocols, Arc operates as a zero-overhead, highly deterministic deployment catalog. It decouples upstream asset locator routines from the low-level system orchestration layer, empowering the `tig-pkg` core engine to index, validate, and execute bare-metal software deployments across multi-platform environments with deterministic precision.
 
-Rather than housing binary blobs, heavy dependencies, or convoluted build systems locally, Halo relies on declarative execution parameters. Each entry within the registry maps out the exact cryptographic, network, and environmental configurations required to secure native binaries directly from upstream developer pipelines. This architecture guarantees that the host operating system maintains an organic, container-free link to the latest stable software releases without exposing the core ecosystem to manual packaging human errors.
+Rather than maintaining static binary artifacts or resource-intensive local toolchains within its source tree, Arc utilizes a declarative, schema-strict recipe infrastructure. Each entry within the registry maps the cryptographic validation parameters, network vector endpoints, and installation sequences required to acquire native software assets directly from upstream release channels. This architecture guarantees that the underlying operating system maintains a clean, container-free link to stable software distributions while eliminating packaging overhead and third-party configuration drift.
 
 ---
 
 ## Architectural Philosophy
 
-The design philosophy governing the Halo Registry is built upon three immutable principles: strict structural isolation, configuration transparency, and complete resistance to fragmentation. Traditional user-maintained repositories frequently suffer from structural decay, broken build dependencies, and insecure packaging scripts that overwrite host configurations blindly. Halo completely rejects this chaos. By standardizing software deployment into predictable, atomic, and minimalist recipe structures, it removes the runtime volatility typically introduced by third-party maintainers.
+The operational principles governing the Arc Registry are grounded in three core mandates: absolute structural isolation, configuration clarity, and total resilience against ecosystem fragmentation. Traditional user-maintained repository models frequently introduce system instability through unverified build dependencies, conflicting environment variables, and opaque post-installation hooks. Arc systematically rejects this paradigm. By standardizing software deployment into immutable, atomic, and minimalist recipe structures, it mitigates the runtime volatility typically associated with community-maintained packaging scripts.
 
-Furthermore, Halo enforces total transparency. Every deployment script within this registry is human-readable, auditable, and engineered to operate exclusively within temporary staging sandboxes during the execution phase. It does not manipulate host core configurations independently; instead, it provides clean installation logic that is completely governed and executed by the native package management systems of the operating system.
+Furthermore, Arc enforces complete auditability. Every installation and removal directive within the registry is human-readable, fully transparent, and engineered to execute within isolated, temporary staging environments during the deployment phase. Arc does not unilaterally manipulate system partitions; instead, it delivers structured, predictable execution parameters designed to be parsed and managed strictly by the underlying `tig-pkg` engine.
 
 ---
 
-## The Symbiotic Architecture: Dawn and Halo Interconnection
+## The Symbiotic Architecture: tig-pkg and Arc Interconnection
 
-The structural integrity of this ecosystem relies entirely on a deterministic, decoupled relationship between the compiled execution layer, Dawn, and the decentralized directive registry, Halo. Halo does not execute code or manage system packages; instead, it functions as the structural intelligence layer that guides the raw C++ performance of Dawn. By isolating the dynamic upstream network locations within Halo, the Dawn engine remains free from hardcoded liabilities and endpoint volatility.
+The integrity of this packaging ecosystem relies on a deterministic, decoupled interaction model between the native execution binary, `tig-pkg`, and the declarative recipe repository, Arc. Arc functions as the structural intelligence layer, serving declarative configurations to the high-performance C++ execution logic of `tig-pkg`. By isolating dynamic upstream network paths and build directives within Arc, the `tig-pkg` engine remains lightweight, secure, and resilient against endpoint volatility.
 
-When an installation or sync sequence is triggered, Dawn establishes a stateless connection to ingest specific recipes from the Halo infrastructure. Dawn parses these declarative scripts, isolates the upstream binary release vectors, downloads the verified assets into local memory, and hands execution over to the native system package manager. This strict division of labor ensures that while the execution utility remains un-compromised and fast, the software registry can scale independently to thousands of deployment configurations.
+Upon the initiation of a deployment or synchronization command, `tig-pkg` queries the Arc infrastructure via stateless HTTPS pipelines to retrieve target-specific recipes (`recipe.confx`, `install.bat`, or platform-equivalent directives). The engine parses these declarative manifests, resolves recursive dependency trees, downloads verified target payloads into temporary staging paths, and oversees the execution of deployment scripts. This separation of concerns guarantees that while the core binary maintains maximum execution performance, the software registry can scale independently across thousands of target platforms.
 
 ---
 
 ## Technical Overview of the Recipe Infrastructure
 
 ### Declarative Staging Pipelines
-Every directory within the Halo ecosystem represents a distinct software target containing isolated, otonom deployment parameters. 
-* **Zero Compilation Footprint:** Halo configurations focus primarily on locating official, pre-compiled upstream binary deployments (`.deb` or corresponding native distribution files). This eliminates the requirement for maintaining massive local toolchains, compiler runtimes, and local package builds.
-* **Deterministic Environment Execution:** Scripts are structured to execute within temporary `/tmp` paths, ensuring that artifacts do not scatter across system partitions. Once the Dawn engine fetches the recipe parameters, deployment is cleanly managed, registered, and contained by the native system architecture.
+
+The Arc directory tree is structurally organized into isolated platform namespaces—specifically supporting POSIX-compliant environments (`posix/`) and Windows operating systems (`windows/`).
+
+* **Zero Compilation Overhead:** Arc recipe configurations focus primarily on mapping pre-compiled native release vectors and vendor-official binary distributions. This approach eliminates the requirement for local compilation toolchains, system header dependencies, and prolonged CPU-bound build processes.
+* **Deterministic Environment Isolation:** Execution scripts are restricted to isolated staging paths (such as `%TEMP%\tig-pkg_staging` on Windows or `/tmp` on POSIX systems). Once `tig-pkg` processes the recipe specifications, deployment manifests are registered locally by the `ManifestManager` subsystem to ensure precise tracking and clean, residue-free package removal.
 
 ---
 
 ## Distribution Paradigms and Integration Manifesto
 
-### For the Debian Community
-Debian stable environments require precise package integration to prevent library conflicts and maintain operating system consistency. Traditional backports or unverified third-party personal archives frequently break native dependency trees. Halo provides a perfectly structured bridge. By serving as an out-of-tree recipe map, it allows Debian administrators to extract identical, cutting-edge native binaries from upstream developers and deploy them cleanly through APT. It keeps the Debian core stable, while providing access to modern binaries under official package management tracking.
+### For the Windows System Architecture
 
-### For the Ubuntu Community
-Ubuntu environments increasingly suffer from forced background runtime layers like Snap, which isolate applications inside loops and slow down startup speeds. Halo bypasses these performance-degrading layers completely. The recipes stored within Halo target authentic upstream binaries, avoiding container wrappers and proprietary cloud store monopolies. This design allows Ubuntu machines to run third-party software as a native, lightning-fast component of the local filesystem hierarchy.
+Windows software deployment is historically fragmented, relying on manual installers, arbitrary registry modifications, and unmonitored file installations that lead to system clutter. Arc provides a clean, bare-metal package management framework for Windows. By delivering structured deployment scripts and automated manifest tracking (`.list` manifest registers stored within system AppData environments), Arc enables `tig-pkg` to install, index, and remove native Windows software without background runtime services or proprietary app store layers.
 
-### For the Fedora Community
-Fedora platforms frequently turn to Flatpak virtualization layers to maintain application freshness, forcing systems to absorb multiple layers of redundant runtime libraries. Halo demonstrates that modern applications do not require gigabytes of containerized runtime bloat. By delivering exact upstream native deployment pathways, Halo allows Fedora systems to maintain precise memory allocation, clean library execution, and true native styling across all integrated applications.
+### For Cross-Platform Ecosystems
 
-### For the Arch Linux Community
-The Arch User Repository (AUR) is highly unstable, forcing users to constantly troubleshoot broken PKGBUILD scripts, manage volatile rolling dependencies, and endure extreme local compilation times that waste processor resources. Halo permanently eliminates this systemic fragility. By standardizing on pre-compiled native upstream binary mapping, Halo provides the same vast software reach as the AUR but removes the volatile rolling-release vulnerabilities. Systems remain stable, updates do not break core libraries, and processing power is spent on work, not compilation.
+Modern software environments demand consistency across heterogeneous operating systems without sacrificing platform-native performance. Arc bridges this gap by maintaining parallel recipe hierarchies tailored specifically to target OS capabilities. Whether resolving binary paths for POSIX toolchains or managing Windows executable deployments, Arc delivers identical operational mechanics across environments, maintaining an uncompromised bare-metal execution profile.
 
 ---
 
 ## Comparative Registry Analysis
 
-### Halo Recipes vs. Flatpak/Flathub Manifests
-Flathub manifests dictate the construction of isolated sandbox containers, specifying numerous runtime layers and duplicate dependencies that must be downloaded and stored alongside the core utility. Halo completely avoids this resource inflation. A Halo recipe does not pack a runtime environment; it contains only the logic to acquire the official upstream native binary. It relies exclusively on the host system resources, ensuring instantaneous application execution, zero storage overhead, and organic desktop integration.
+### Arc Directives vs. Conventional Package Managers
 
-### Halo Recipes vs. AUR PKGBUILD Configurations
-AUR PKGBUILD files are notoriously complex, containing long, volatile build phases that compile software from raw source code locally. This framework is prone to local toolchain failures and broken upgrades. Halo recipes are streamlined, production-ready, and optimized strictly for binary deployments. Written to be parsed effortlessly by the C++ Dawn engine, Halo recipes eliminate local compilation liabilities, removing dependency churn and providing predictable system upgrades.
+Unlike traditional package managers that enforce monolithic central repositories or require complex local building environments, Arc recipes are designed for direct, lightweight parsing by the C++ engine. Arc eliminates the operational latency of complex SQL-based local index caching, relying instead on lightweight, key-value configuration schemas (`.confx`). This delivers instant query times, rapid dependency graph resolution, and deterministic package lifecycle management.
+
+---
+
+## Project Context and Ecosystem Integration
+
+The Arc Project is developed and maintained as an integral component of the **SolarPath+** ecosystem, serving alongside the `tig-pkg` engine to form a complete, end-to-end native package distribution architecture.
 
 ---
 
 ## Licensing and Ownership
 
-The Halo Project is an open-source initiative dedicated to the Linux community. The registry architecture is designed, curated, and actively developed by **hypernova-developer**. In accordance with the principles of software freedom and copyleft protection, the entire framework is officially distributed under the terms of the **GNU General Public License v3.0 (GPLv3)**. For complete legal provisions, conditions, and permissions, please refer directly to the `LICENSE` file located within the root directory of this repository.
+The Arc Project is an open-source initiative engineered for the global software development community. The repository architecture and recipe specifications are curated and actively developed by **hypernova-developer**. In adherence to open-source software principles and copyleft protections, the entire framework is distributed under the terms of the **GNU General Public License v3.0 (GPLv3)**. For complete legal terms, conditions, and permissions, refer to the `LICENSE` file located within the root directory of this repository.
 
 ### Summary of Licensing Terms and Obligations
-Under the GPLv3 mandate, this ecosystem operates under strict protective guidelines to ensure it remains open and un-monopolized:
-* **Commercial and Private Use:** Anyone may freely execute, modify, and distribute this software for private or commercial infrastructure requirements.
-* **Source Disclosure (Copyleft):** Any modified versions, derivatives, or standalone utilities that link with or incorporate components of the Halo registry must make their entire source code transparently available under the exact same GPLv3 license.
-* **Patent Protection:** The license includes an express grant of patent rights from contributors, preventing corporate entities from asserting patent litigation against the users or developers of this project.
-* **No Closed-Source Abstraction:** Proprietary backends, closed software stores, or containerized packaging systems cannot encapsulate or link with this utility without making their own integration mechanisms fully open-source.
+
+Under the GPLv3 license framework, this project operates under strict legal provisions to ensure long-term accessibility and transparency:
+
+* **Commercial and Private Use:** Rights are granted to execute, modify, and deploy this software for private, enterprise, or commercial infrastructure requirements.
+* **Source Disclosure (Copyleft):** Any modified variations, derivative distributions, or system tools that integrate or link with components of the Arc registry must disclose their full source code under the equivalent GPLv3 licensing terms.
+* **Patent Protection:** The license incorporates an explicit grant of patent rights from contributors, safeguarding end users and developers against patent enforcement actions.
+* **Prohibition of Closed Abstractions:** Proprietary software layers, locked application stores, or containerized packaging systems cannot restrict or encapsulate this framework without making their integration mechanisms fully open and auditable.
+
+> hypernova-developer
